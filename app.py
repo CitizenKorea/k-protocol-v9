@@ -78,8 +78,7 @@ st.markdown(T["intro_markdown"])
 
 st.divider()
 
-# --- 5. 물리 상수 및 변수 정의 (에러 해결 부분) ---
-# 여기서 변수를 먼저 명확하게 정의해야 뒤에서 에러가 나지 않습니다.
+# --- 5. 물리 상수 및 변수 정의 ---
 g0 = 9.80665
 pi_sq = np.pi**2
 s_earth = pi_sq / g0 
@@ -90,11 +89,12 @@ with st.expander(T["formula_header"], expanded=True):
         st.latex(T["formula_math"])
         st.caption(T["formula_caption"])
     with col2:
+        # 에러 수정 완료: {{earth}} 로 이중 중괄호 처리
         st.info(f"""
         **고정된 표준 상수**
         - Earth Std Gravity ($g_0$): {g0} m/s²
         - Geometric Base ($\pi^2$): {pi_sq:.6f}
-        - Earth Distortion ($S_{earth}$): {s_earth:.6f}
+        - Earth Distortion ($S_{{earth}}$): {s_earth:.6f}
         """)
 
 # --- 6. 관측소별 데이터 세팅 ---
@@ -147,7 +147,7 @@ ax.scatter(sites, std_vals, color='#FF4B4B', label=T["legend_raw"], s=300, alpha
 # 수렴된 K-PROTOCOL 데이터 (파란색)
 ax.scatter(sites, k_vals, color='#1C83E1', label=T["legend_k"], s=250, marker='D', edgecolor='white', linewidth=3, zorder=5)
 
-# 타겟선 표시 (f-string 중괄호 에러 해결: {{}} 사용)
+# 타겟선 표시 (에러 수정 완료: {{\odot}} 로 이중 중괄호 처리)
 ax.axhline(y=avg_k, color='#1C83E1', linestyle='--', alpha=0.8, linewidth=2, label=f'{T["legend_target"]}: {avg_k:.4f} $M_{{\\odot}}$')
 
 ax.set_ylabel(T["plot_ylabel"], fontsize=12, fontweight='bold')
