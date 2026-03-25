@@ -154,7 +154,7 @@ ax.scatter(sites, std_vals, color='#FF4B4B', label=T["legend_raw"], s=300, alpha
 ax.scatter(sites, k_vals, color='#1C83E1', label=T["legend_k"], s=250, marker='D', edgecolor='white', linewidth=3, zorder=5)
 
 # 3. 수렴선(타겟선) 표시
-ax.axhline(y=avg_k, color='#1C83E1', linestyle='--', alpha=0.8, linewidth=2, label=f'{T["legend_target"]}: {avg_k:.4f} $M_{\odot}$')
+ax.axhline(y=avg_k, color='#1C83E1', linestyle='--', alpha=0.8, linewidth=2, label=f'{T["legend_target"]}: {avg_k:.4f} $M_{{\\odot}}$')
 
 # 그래프 스타일링
 ax.set_ylabel(T["plot_ylabel"], fontsize=12, fontweight='bold')
