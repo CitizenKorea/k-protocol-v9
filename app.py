@@ -84,12 +84,13 @@ with st.expander(T["formula_header"], expanded=True):
     with col1:
         st.latex(T["formula_math"])
         st.caption(T["formula_caption"])
-    with col2:
-        # 질문자님 이론 기반 고정 상수
+with col2:
+        # 이 3줄의 변수 정의가 반드시 st.info 블록보다 '먼저' 와야 합니다!
         g0 = 9.80665
         pi_sq = np.pi**2
-        s_earth = pi_sq / g0 # 약 1.0064195
+        s_earth = pi_sq / g0 
         
+        # 그 다음에 이 정보창 출력 코드가 와야 에러가 안 납니다.
         st.info(f"""
         **고정된 표준 상수**
         - Earth Std Gravity ($g_0$): {g0} m/s²
