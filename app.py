@@ -1,6 +1,3 @@
-### 💻 `app.py` (LIGO 데이터 역공학 및 블라인드 수렴 테스트 버전)
-
-```python
 import streamlit as st
 import numpy as np
 import pandas as pd
