@@ -215,4 +215,3 @@ st.dataframe(data_table, use_container_width=True)
 
 st.markdown(f"> {T['concl_raw']}: **{std_std_dev:.6f}** → {T['concl_k']}: **{k_std_dev:.6f}**")
 st.markdown(T["concl_final"])
-```
